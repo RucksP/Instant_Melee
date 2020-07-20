@@ -10,19 +10,19 @@ For those who are constantly striving to be optimal, now start your Dolphin with
 3. Put the path to your Dolphin.exe in configs.txt (ex: C:/FM-Slippi/Dolphin.exe)\
    -Remember to use forwards slashes (/), not backslashes, and use the path to the exe, not just the folder its in!
 4. Launch instant_melee.exe
-5. (Optional) Set instant_melee to launch on startup (otherwise its still the same number of inputs as before)\
+5. (Optional) Set instant_melee to launch on startup\
     a) Press the windows key and R (Win + R)\
     b) Type "shell:startup" into the window that just popped up (without the quotes)\
     c) Place the given instant_melee shortcut (the one with the icon) into the folder that just opened
 
 ## Things that might cause this program to not work
 
-1. Being on Linux or Mac\
+1. Being on Linux or Mac
 2. Opening Dolphin by just clicking on it when the instant_melee is open (it will still work, but a 2nd dolphin window will open and instant_melee may exit)\
-3. Not having the adapter plugged in when the instant_melee was started\
+3. Not having the adapter plugged in when the instant_melee was started
 4. Having an incorrect path in config.txt\
-    -edit config.txt to contain your path \
-    -remember to use the path to the exe, not just the folder its in\
+    -edit config.txt to contain your path 
+    -remember to use the path to the exe, not just the folder its in
     -use forward slashes
   
 Otherwise check logs.txt and send me a message
