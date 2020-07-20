@@ -39,7 +39,7 @@ If you follow all the steps above, you will perpetually be only 3 GCC inputs awa
 2. Dolphin was already open when you launched instant_melee
 3. Opening Dolphin normally when instant_melee is open (it will still work, but a 2nd dolphin process will open and instant_melee may exit)
 4. Not having the adapter plugged in when the instant_melee was started
-5. Unplugging your adapter and plugging it back in
+5. Unplugging your adapter and plugging it back in while instant_melee is running
 6. Trying to start Slippi with a controller that is not plugged into the first port
 7. Being on Linux or Mac
   
