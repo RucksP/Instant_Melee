@@ -17,10 +17,10 @@ For those who are constantly striving to be optimal, now start your Dolphin with
 
 ## Things that might cause this program to not work
 
-Being on Linux or Mac\
-Opening Dolphin by just clicking on it when the instant_melee is open (it will still work, but a 2nd dolphin window will open and instant_melee may exit)\
-Not having the adapter plugged in when the instant_melee was started\
-Having an incorrect path in config.txt\
+1. Being on Linux or Mac\
+2. Opening Dolphin by just clicking on it when the instant_melee is open (it will still work, but a 2nd dolphin window will open and instant_melee may exit)\
+3. Not having the adapter plugged in when the instant_melee was started\
+4. Having an incorrect path in config.txt\
     -edit config.txt to contain your path \
     -remember to use the path to the exe, not just the folder its in\
     -use forward slashes
