@@ -15,9 +15,9 @@ Now you can find Slippi Online matches in as few frames as possible.
 ## How to Setup
 
 1. Download the latest release [here](https://github.com/RucksP/Instant_Melee/releases/download/v0.9/Instant.Melee.Release.7z) 
-2. Unzip Instant Melee.7z
+2. Unzip Instant.Melee.Release.7z
 3. Put the path to your Dolphin.exe in configs.txt (ex: C:/FM-Slippi/Dolphin.exe)\
-   -Remember to use forward slashes, and use the full path to the exe, not just the folder its in!
+   -Remember to use the full path to the exe, not just the folder its in!
 4. Launch instant_melee.exe
 5. (Optional) Set instant_melee to launch on startup\
     a) Press the windows key and R (Win + R)\
@@ -34,12 +34,11 @@ If you follow all the steps above, you will perpetually be only 3 GCC inputs awa
 
 1. **Having an incorrect path in config.txt**\
     -edit config.txt to contain your path \
-    -remember to use the path to the exe, not just the folder it's in\
-    -use forward slashes
+    -remember to use the path to the exe, not just the folder it's in
 2. Dolphin was already open when you launched instant_melee
 3. Opening Dolphin normally when instant_melee is open (it will still work, but a 2nd dolphin process will open and instant_melee may exit)
 4. Not having the adapter plugged in when the instant_melee was started
-5. Unplugging your adapter and plugging it back in
+5. Unplugging your adapter and plugging it back in while instant_melee is running
 6. Trying to start Slippi with a controller that is not plugged into the first port
 7. Being on Linux or Mac
   
