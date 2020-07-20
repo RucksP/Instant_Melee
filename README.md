@@ -17,7 +17,7 @@ For those who are constantly striving to be optimal, now start your Dolphin with
 
 ## Things that might cause this program to not work
 
-Being on Linux or Mac
+Being on Linux or Mac\n
 Opening Dolphin by just clicking on it when the instant_melee is open (it will still work, but a 2nd dolphin window will open and instant_melee may exit)
 Not having the adapter plugged in when the instant_melee was started
 Having an incorrect path in config.txt
