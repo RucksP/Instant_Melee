@@ -18,11 +18,11 @@ For those who are constantly striving to be optimal, now start your Dolphin with
 ## Things that might cause this program to not work
 
 1. Being on Linux or Mac
-2. Opening Dolphin by just clicking on it when the instant_melee is open (it will still work, but a 2nd dolphin window will open and instant_melee may exit)\
+2. Opening Dolphin by just clicking on it when the instant_melee is open (it will still work, but a 2nd dolphin window will open and instant_melee may exit)
 3. Not having the adapter plugged in when the instant_melee was started
 4. Having an incorrect path in config.txt\
-    -edit config.txt to contain your path 
-    -remember to use the path to the exe, not just the folder its in
+    -edit config.txt to contain your path \
+    -remember to use the path to the exe, not just the folder its in\
     -use forward slashes
   
 Otherwise check logs.txt and send me a message
