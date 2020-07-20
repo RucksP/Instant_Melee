@@ -209,6 +209,14 @@ static bool checkValidAccess(libusb_device* device) {
          return false;
     }
 
+    // This call makes Nyko-brand (and perhaps other) adapters work.
+    // However it returns LIBUSB_ERROR_PIPE with Mayflash adapters.
+    const int transfer = libusb_control_transfer(adapter_handle, 0x21, 11, 0x0001, 0, NULL, 0, 1000);
+    if (transfer < 0) {
+        logs = fopen(LOGS_TXT, "a");
+        fprintf(logs, "libusb_control_transfer failed with error: %d\n", transfer);
+        fclose(logs);
+    }
     //claim the interface
     ret = libusb_claim_interface(adapter_handle, 0);
     if(ret) {
