@@ -1,14 +1,12 @@
 # Instant_Melee
+
 Start finding online SSBM matches as fast as possible by launching Project Slippi with only your GameCube controller!
 
 ## What It Does
 
-For those who are constantly striving to be optimal in all things, you can now start Slippi with only the press of single GameCube button.
-
-This program reads inputs from your GameCube Adapter and launches Project Slippi.
-
-Simply grab your controller and press the START button and Dolphin will launch immediately.
-
+For those who are constantly striving to be optimal in all things, you can now start Slippi with only the press of single GameCube button.\
+This program reads inputs from your GameCube Adapter and launches Project Slippi.\
+Simply grab your controller and press the START button and Dolphin will launch immediately.\
 Now you can find Slippi Online matches in as few frames as possible.
 
 ## How to Setup
