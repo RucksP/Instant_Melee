@@ -7,7 +7,7 @@ For those who are constantly striving to be optimal, now start your Dolphin with
 
 1. Download the latest release [here](https://github.com/RucksP/Instant_Melee/releases/download/v0.9/Instant.Melee.7z) 
 2. Unzip Instant Melee.7z
-3. Put the path to your Dolphin.exe in configs.txt (ex: C:/FM-Slippi/Dolphin.exe)
+3. Put the path to your Dolphin.exe in configs.txt (ex: C:/FM-Slippi/Dolphin.exe)\
    -Remember to use forwards slashes (/), not backslashes, and use the path to the exe, not just the folder its in!
 4. Launch instant_melee.exe
 5. (Optional) Set instant_melee to launch on startup (otherwise its still the same number of inputs as before)\
