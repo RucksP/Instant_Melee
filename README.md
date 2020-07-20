@@ -23,7 +23,7 @@ Not having the adapter plugged in when the instant_melee was started\
 Having an incorrect path in config.txt\
   -actually edit config.txt to contain your path \
   -remember to use the path to the exe, not just the folder its in\
-  -use forward slashes\
+  -use forward slashes
   
 Otherwise check logs.txt and send me a message
 
