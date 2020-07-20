@@ -1,0 +1,31 @@
+//                          CONFIGS.TXT
+//----------------------------------------------------------------------------------
+//
+// Set the paths for your dolphin exe and the sound you want to play here.
+// 
+// If you do not want a sound to be played, leave the sound path blank.
+//
+// Do not edit anything other than what occurs directly after the '='.
+// Care for trailing whitespaces!
+////////////////////////////////////////////////////////////////////////////////////
+
+DOLPHIN_PATH=C:/Users/Rohan/Desktop/Emulation/FM-Slippi/Dolphin.exe
+START_SOUND_PATH=sounds/menu-ok.wav
+KEY_BUTTON=0x1000
+
+////////////////////////////////////////////////////////////////////////////////////
+// Here are the values for each of the buttons:
+// You can also use button combinations i.e. A+B = 0x0300, or L+R+A+Start = 0x1160
+//  START           = 0x1000
+//  A               = 0x0100
+//  B               = 0x0200
+//  X               = 0x0400
+//  Y               = 0x0800
+//  Z               = 0x0010
+//  HARD PRESS R    = 0x0020
+//  HARD PRESS L    = 0x0040
+//  D-PAD LEFT      = 0x0001
+//  D-PAD RIGHT     = 0x0002
+//  D-PAD DOWN      = 0x0004
+//  D-PAD UP        = 0x0008
+//////////////////////////////////////////////////////////////////////////////////////
