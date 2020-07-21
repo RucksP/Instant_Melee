@@ -78,6 +78,8 @@ bool getPaths(char * dolphin, char * sound, char * key_button) {
 
 int main(int argc, char * argv[]) {
 
+    LockSetForegroundWindow(LSFW_UNLOCK);
+
     //use this code to hide the console window
     HWND hWnd = GetConsoleWindow();
     ShowWindow( hWnd, SW_MINIMIZE );  //won't hide the window without SW_MINIMIZE
@@ -89,9 +91,6 @@ int main(int argc, char * argv[]) {
     char * dolphin_path;
     char * sound_path;
     int key_button;
-
-    PROCESS_INFORMATION pi;
-
 
     //create a new logs.txt every time this program is opened again
     logs = fopen(LOGS_TXT, "w");
@@ -130,19 +129,29 @@ int main(int argc, char * argv[]) {
     if(sound_path[0] != '\0')
         playSound(sound_path);
     //make dolphin the main window
-    goDesktop();
+    //goDesktop();
     //here is where we start dolphin
+    PROCESS_INFORMATION pi;
     pi = createProcess(dolphin_path);
     //if the function failed, return
     if(pi.hProcess == NULL) {
         return 1;
-    }
-    //while dolphin is still running, just hang the process
+    } 
+
+    //our console has to be in the foreground to set another process as the foreground process
+    ShowWindow( hWnd, SW_RESTORE);
+    ShowWindow( hWnd, SW_SHOWMINIMIZED);
+    printf("This console will hide once Dolphin has been closed (May take up 5 seconds)\n");
+    setForegroundWindow(pi.dwProcessId);
+    //while dolphin is still running, just hang instant_melee
     while(isProcessOpen(pi)) {
         Sleep(5000);
     }
     // Close process and thread handles.
     closeProcessAndThreadHandles(pi);
+    //rehide the console
+    ShowWindow( hWnd, SW_MINIMIZE );  //won't hide the window without SW_MINIMIZE
+    ShowWindow( hWnd, SW_HIDE );
     //once dolphin is no longer running, branch to the start of main
     goto start; 
     return 0;

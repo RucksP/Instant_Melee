@@ -44,3 +44,13 @@ void closeProcessAndThreadHandles(PROCESS_INFORMATION pi);
 *Return: None
 */
 void goDesktop();
+
+/**Description: Sets the given process to be in the foreground
+ *              NOTE! this function will only work if instant_melee
+ *              is in the foreground when called
+ *
+ *Parameters: DWORD dwProcessID, the dwProcessID of the process
+ *
+ *Return: true on Successs, false otherwise
+ */
+bool setForegroundWindow(DWORD dwProcessID);
