@@ -14,7 +14,7 @@ Now you can find Slippi Online matches in as few frames as possible.
 
 ## How to Setup
 
-1. Download the latest release [here](https://github.com/RucksP/Instant_Melee/releases/download/v0.9/Instant.Melee.Release.7z) 
+1. Download the latest release [here](https://github.com/RucksP/Instant_Melee/releases/) 
 2. Unzip Instant.Melee.Release.7z
 3. Put the path to your Dolphin.exe in configs.txt (ex: C:/FM-Slippi/Dolphin.exe)\
    -Remember to use the full path to the exe, not just the folder its in!
