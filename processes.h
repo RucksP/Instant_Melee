@@ -1,3 +1,10 @@
+/** Header file for processes.c
+ * processes.c is a file which contains methods for interacting with Windows Processes 
+ */
+
+#ifndef PROCESSES_H
+#define PROCESSES_H
+
 /**Description: Plays a sound file from the given path
 *
 *Parameters: 
@@ -45,12 +52,4 @@ void closeProcessAndThreadHandles(PROCESS_INFORMATION pi);
 */
 void goDesktop();
 
-/**Description: Sets the given process to be in the foreground
- *              NOTE! this function will only work if instant_melee
- *              is in the foreground when called
- *
- *Parameters: DWORD dwProcessID, the dwProcessID of the process
- *
- *Return: true on Successs, false otherwise
- */
-bool setForegroundWindow(DWORD dwProcessID);
+#endif

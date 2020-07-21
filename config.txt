@@ -9,7 +9,7 @@
 // Care for trailing whitespaces!
 ////////////////////////////////////////////////////////////////////////////////////
 
-DOLPHIN_PATH=C:/Users/Rohan/Desktop/Emulation/FM-Slippi/Dolphin.exe
+DOLPHIN_PATH=
 START_SOUND_PATH=sounds/menu-ok.wav
 KEY_BUTTON=0x1000
 

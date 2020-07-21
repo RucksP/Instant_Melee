@@ -1,3 +1,10 @@
+/** Header file for GCA.c
+ * GCA.c is a file which contains methods for reading from a GameCube Adapter
+ */ 
+
+#ifndef GCA_H
+#define GCA_H
+
 #include "GCC.h"
 
 enum ControllerPorts
@@ -31,3 +38,5 @@ bool Setup(int key);
  *         from the controller at the assigned port
  */
 struct GCC Input(int port);
+
+#endif

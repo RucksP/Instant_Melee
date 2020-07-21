@@ -1,9 +1,10 @@
+/** File which contains methods for reading from a GameCube Adapter
+*/
 
 #include <libusb.h>
 #include <stdbool.h>
 #include <stdio.h>
 #include <stdlib.h>
-#include <Windows.h>
 
 #include "GCC.h"
 #include "GCA.h"

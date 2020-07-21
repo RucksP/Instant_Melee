@@ -1,7 +1,6 @@
 #ifndef GCC_H
 #define GCC_H
 
-
 #include <stdint.h>
 
 enum Buttons
