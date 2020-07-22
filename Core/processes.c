@@ -46,8 +46,9 @@ PROCESS_INFORMATION createProcess(char * process_path) {
     ZeroMemory( &pi, sizeof(pi) );
     bool  ret = CreateProcess(process_path, NULL, NULL, NULL, false, 0, NULL, NULL, &si, &pi);
     if(!ret) {
+        DWORD error = GetLastError();
         logs = fopen(LOGS_TXT, "a");
-        fprintf(logs, "opening process \"%s\" failed with error (%d)\n", process_path, GetLastError());
+        fprintf(logs, "opening process \"%s\" failed with error (%d)\n", process_path, error);
         fclose(logs);
         return pi;
     }
@@ -85,43 +86,26 @@ void closeProcessAndThreadHandles(PROCESS_INFORMATION pi) {
     CloseHandle( pi.hThread );
 }
 
-/**Description: goes to the Desktop
-*
-*Parameters: None
-*
-*Return: None
-*/
-void goDesktop() {
-    INPUT ip1;
-    ip1.type = INPUT_KEYBOARD;
-    ip1.ki.wScan = 0; // hardware scan code for key
-    ip1.ki.time = 0;
-    ip1.ki.dwExtraInfo = 0;
 
-    INPUT ip2;
-    ip2.type = INPUT_KEYBOARD;
-    ip2.ki.wScan = 0; // hardware scan code for key
-    ip2.ki.time = 0;
-    ip2.ki.dwExtraInfo = 0;
+char * getPathFromUser() {
+    
+    OPENFILENAME ofn;
+    char fileName[MAX_PATH] = "";
+    ZeroMemory(&ofn, sizeof(ofn));
+    ofn.lStructSize = sizeof(OPENFILENAME);
+    ofn.hwndOwner = NULL;
+    ofn.lpstrFilter = "executables (*.exe*)\0*.exe*\0";
+    ofn.lpstrFile = fileName;
+    ofn.nMaxFile = MAX_PATH;
+    ofn.Flags = OFN_EXPLORER | OFN_FILEMUSTEXIST | OFN_HIDEREADONLY | OFN_NOCHANGEDIR;
+    ofn.lpstrDefExt = "";
 
-    // Press the Windows key
-    ip1.ki.wVk = 0x5B; // virtual-key code for the Windows key
-    ip1.ki.dwFlags = 0; // 0 for key press
-    SendInput(1, &ip1, sizeof(INPUT));
+    char * filePath;
 
-    // Press the "d" key
-    ip2.ki.wVk = 0x44; // virtual-key code for the "d" key
-    ip2.ki.dwFlags = 0; // 0 for key press
-    SendInput(1, &ip2, sizeof(INPUT));
+    if(GetOpenFileName(&ofn))
+        filePath = fileName;
 
-    // Release the Windows key
-    ip1.ki.dwFlags = KEYEVENTF_KEYUP; // KEYEVENTF_KEYUP for key release
-    SendInput(1, &ip1, sizeof(INPUT));
-
-    // Release the "d" key
-    ip2.ki.dwFlags = KEYEVENTF_KEYUP; // KEYEVENTF_KEYUP for key release
-    SendInput(1, &ip2, sizeof(INPUT));
-
-    return;
+    return filePath;
 }
+
 

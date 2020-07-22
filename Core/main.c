@@ -21,8 +21,10 @@ int main(int argc, char * argv[]) {
 
     //use this code to hide the console window
     HWND hWnd = GetConsoleWindow();
-    ShowWindow( hWnd, SW_MINIMIZE );  //won't hide the window without SW_MINIMIZE
-    ShowWindow( hWnd, SW_HIDE );
+    //ShowWindow( hWnd, SW_MINIMIZE );  //won't hide the window without SW_MINIMIZE
+    //ShowWindow( hWnd, SW_HIDE );
+
+
 
     char dolphin_path_buf[100];
     char sound_path_buf[100];
@@ -45,6 +47,8 @@ int main(int argc, char * argv[]) {
         fclose(logs);
         return 1;
     }
+
+ 
 
     dolphin_path = dolphin_path_buf;
     sound_path = sound_path_buf;

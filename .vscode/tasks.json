@@ -11,6 +11,7 @@
 				"-o",
 				"${workspaceFolder}\\instant_melee.exe",
 				"-lwinmm",
+				"-lcomdlg32",
 				"'-lusb-1.0'"
 			], 
 			"options": {

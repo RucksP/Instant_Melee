@@ -5,6 +5,8 @@
 #ifndef PROCESSES_H
 #define PROCESSES_H
 
+#include <windows.h>
+
 /**Description: Plays a sound file from the given path
 *
 *Parameters: 
@@ -44,12 +46,6 @@ bool isProcessOpen(PROCESS_INFORMATION pi);
 */
 void closeProcessAndThreadHandles(PROCESS_INFORMATION pi);
 
-/**Description: goes to the Desktop
-*
-*Parameters: None
-*
-*Return: None
-*/
-void goDesktop();
+char * getPathFromUser();
 
 #endif
