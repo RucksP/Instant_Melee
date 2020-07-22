@@ -55,3 +55,12 @@ If none of these helped fix your problem, check logs.txt and send me a message
 "An engineer will spend 2 weeks trying to save 5 minutes" - My High School Physics Teacher
 
 "Because when someone asks me to play melee I instinctively grab my controller and lean back in my chair. Unfortunately this creates the problem where I have to lean back forward and click on the dolphin icon to load up the game. Sometimes I have to alt-tab too!" - Me
+
+
+## Building from source
+
+Compile using mingw with the following command
+
+``` gcc Core/*.c -o instant_melee.exe -lwinmm -lcomdlg32 '-lusb-1.0' ```
+
+you will need the addition libusb-1.0 library
