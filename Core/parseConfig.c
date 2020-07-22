@@ -96,8 +96,8 @@ bool parseConfig(char * dolphin, char * sound, char * key_button) {
 
     fclose(paths);
     fclose(temp);
-    //remove(CONFIGS_TXT);
-    //rename(TEMP_FILE, CONFIGS_TXT);
+    remove(CONFIGS_TXT);
+    rename(TEMP_FILE, CONFIGS_TXT);
   
     return true;
 }
