@@ -61,6 +61,6 @@ If none of these helped fix your problem, check logs.txt and send me a message
 
 Compile using mingw with the following command
 
-``` gcc Core/*.c -o instant_melee.exe -lwinmm '-lusb-1.0' ```
+``` gcc Core/*.c -o instant_melee.exe -lwinmm -lcomdlg32 '-lusb-1.0' ```
 
 you will need the addition libusb-1.0 library
