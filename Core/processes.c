@@ -18,7 +18,8 @@ FILE * logs;
 *Return: returns true if successful, false if not
 */
 bool playSound(char * sound_path) {
-    bool ret = PlaySound(sound_path, NULL, SND_FILENAME);
+    
+    bool ret = PlaySound(sound_path, NULL, (SND_FILENAME | SND_ASYNC));
     if(!ret) {
         logs = fopen(LOGS_TXT, "a");
         fprintf(logs, "could not play sound\n");
@@ -87,6 +88,12 @@ void closeProcessAndThreadHandles(PROCESS_INFORMATION pi) {
 }
 
 
+/**Description: prompts the user for the path to a file
+*
+*Parameters: None
+*
+*Return: the path to the file as a string
+*/
 char * getPathFromUser() {
     
     OPENFILENAME ofn;
@@ -98,6 +105,7 @@ char * getPathFromUser() {
     ofn.lpstrFile = fileName;
     ofn.nMaxFile = MAX_PATH;
     ofn.Flags = OFN_EXPLORER | OFN_FILEMUSTEXIST | OFN_HIDEREADONLY | OFN_NOCHANGEDIR;
+    ofn.lpstrTitle = "Locate Dolphin.exe";
     ofn.lpstrDefExt = "";
 
     char * filePath;

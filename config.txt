@@ -1,4 +1,4 @@
-//                          CONFIGS.TXT
+//  (this text will be removed automatically)
 //----------------------------------------------------------------------------------
 //
 // Set the paths for your dolphin exe and the sound you want to play here.
@@ -10,7 +10,7 @@
 ////////////////////////////////////////////////////////////////////////////////////
 
 DOLPHIN_PATH=
-START_SOUND_PATH=sounds/menu-ok.wav
+START_SOUND_PATH=sounds\menu-ok.wav
 KEY_BUTTON=0x1000
 
 ////////////////////////////////////////////////////////////////////////////////////

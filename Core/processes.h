@@ -46,6 +46,12 @@ bool isProcessOpen(PROCESS_INFORMATION pi);
 */
 void closeProcessAndThreadHandles(PROCESS_INFORMATION pi);
 
+/**Description: prompts the user for the path to a file
+*
+*Parameters: None
+*
+*Return: the path to the file as a string
+*/
 char * getPathFromUser();
 
 #endif

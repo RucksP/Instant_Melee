@@ -21,14 +21,13 @@ int main(int argc, char * argv[]) {
 
     //use this code to hide the console window
     HWND hWnd = GetConsoleWindow();
-    //ShowWindow( hWnd, SW_MINIMIZE );  //won't hide the window without SW_MINIMIZE
-    //ShowWindow( hWnd, SW_HIDE );
+    ShowWindow( hWnd, SW_MINIMIZE );  //won't hide the window without SW_MINIMIZE
+    ShowWindow( hWnd, SW_HIDE );
 
-
-
+    bool ret;
     char dolphin_path_buf[100];
     char sound_path_buf[100];
-    char key_button_buf[100];
+    char key_button_buf[10];
     char * dolphin_path;
     char * sound_path;
     int key_button;
@@ -39,16 +38,18 @@ int main(int argc, char * argv[]) {
     logs = fopen(LOGS_TXT, "w");
     fclose(logs);
 
-
-    bool ret = parseConfig(dolphin_path_buf, sound_path_buf, key_button_buf);
-    if(!ret) {
-        logs = fopen(LOGS_TXT, "a");
-        fprintf(logs, "Unable to read DOLPHIN_PATH or KEY_BUTTON\n");
-        fclose(logs);
-        return 1;
+    //check if this is the first time the program was opened
+    if( isConfigInit() ) {
+        ret = parseConfig(dolphin_path_buf, sound_path_buf, key_button_buf);
+        if(!ret) {
+            return 1;
+        }
+    } else {    
+        ret = initConfig(dolphin_path_buf, sound_path_buf, key_button_buf);
+        if(!ret) {
+            return 1;
+        }
     }
-
- 
 
     dolphin_path = dolphin_path_buf;
     sound_path = sound_path_buf;
@@ -88,7 +89,7 @@ int main(int argc, char * argv[]) {
     }
     // Close process and thread handles.
     closeProcessAndThreadHandles(pi);
-
+    
     //once dolphin is no longer running, branch to the earliest point in main
     //where most variables were initialized
     goto vars_initalized;

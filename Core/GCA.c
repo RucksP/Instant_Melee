@@ -33,7 +33,6 @@ int adapter_status = 0;
 static uint8_t endpoint_in = 0;
 static uint8_t endpoint_out = 0;
 bool readInputs = false;
-//if no key_button was passed just use start
 int key_button;
 
 /** Description: swaps the values of load1 and load2.
@@ -96,9 +95,13 @@ static void Read() {
 
         //read the button input
         //only read from controller 1 
-        struct GCC pad;
-        pad = Input(CONTROLLER_1);
-        if((pad.button & key_button) == key_button) 
+        struct GCC pad1, pad2, pad3, pad4;
+        pad1 = Input(CONTROLLER_1);
+        pad2 = Input(CONTROLLER_2);
+        pad3 = Input(CONTROLLER_3);
+        pad4 = Input(CONTROLLER_4);
+        if((pad1.button & key_button) == key_button || (pad2.button & key_button) == key_button ||
+           (pad3.button & key_button) == key_button || (pad4.button & key_button) == key_button) 
             readInputs = false;
         //Sleep(150);
     }
@@ -178,7 +181,7 @@ static bool checkValidAccess(libusb_device* device) {
      ret = libusb_open(device, &adapter_handle);
      if (ret == LIBUSB_ERROR_ACCESS) {
         logs = fopen(LOGS_TXT, "a");
-        fprintf(logs, "Lazy_Melee does not have access to this device\n");
+        fprintf(logs, "instant_Melee does not have access to this device\n");
         fclose(logs);
      }     
      if (ret) {
@@ -210,14 +213,6 @@ static bool checkValidAccess(libusb_device* device) {
          return false;
     }
 
-    // This call makes Nyko-brand (and perhaps other) adapters work.
-    // However it returns LIBUSB_ERROR_PIPE with Mayflash adapters.
-    const int transfer = libusb_control_transfer(adapter_handle, 0x21, 11, 0x0001, 0, NULL, 0, 1000);
-    if (transfer < 0) {
-        logs = fopen(LOGS_TXT, "a");
-        fprintf(logs, "libusb_control_transfer failed with error: %d\n", transfer);
-        fclose(logs);
-    }
     //claim the interface
     ret = libusb_claim_interface(adapter_handle, 0);
     if(ret) {
@@ -366,8 +361,6 @@ bool Setup(int key) {
         fclose(logs);
         return false;
     }
-
-
 
     //release all handles and relinquish control of the device to prevent memory leaks
     //and to let other programs take control of the adapter
