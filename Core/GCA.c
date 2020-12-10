@@ -94,7 +94,6 @@ static void Read() {
         }
 
         //read the button input
-        //only read from controller 1 
         uint16_t pad_buttons = Input(CONTROLLER_1).button | Input(CONTROLLER_2).button  | Input(CONTROLLER_3).button  | Input(CONTROLLER_4).button ;
         if( (pad_buttons & key_button) == key_button) 
             readInputs = false;
