@@ -1,4 +1,4 @@
-//  (this text will be removed automatically)
+//                          CONFIGS.TXT
 //----------------------------------------------------------------------------------
 //
 // Set the paths for your dolphin exe and the sound you want to play here.

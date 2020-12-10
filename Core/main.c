@@ -25,7 +25,7 @@ int main(int argc, char * argv[]) {
     ShowWindow( hWnd, SW_HIDE );
 
     bool ret;
-    char dolphin_path_buf[100];
+    char dolphin_path_buf[200];
     char sound_path_buf[100];
     char key_button_buf[10];
     char * dolphin_path;

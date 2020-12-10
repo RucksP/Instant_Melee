@@ -95,13 +95,8 @@ static void Read() {
 
         //read the button input
         //only read from controller 1 
-        struct GCC pad1, pad2, pad3, pad4;
-        pad1 = Input(CONTROLLER_1);
-        pad2 = Input(CONTROLLER_2);
-        pad3 = Input(CONTROLLER_3);
-        pad4 = Input(CONTROLLER_4);
-        if((pad1.button & key_button) == key_button || (pad2.button & key_button) == key_button ||
-           (pad3.button & key_button) == key_button || (pad4.button & key_button) == key_button) 
+        uint16_t pad_buttons = Input(CONTROLLER_1).button | Input(CONTROLLER_2).button  | Input(CONTROLLER_3).button  | Input(CONTROLLER_4).button ;
+        if( (pad_buttons & key_button) == key_button) 
             readInputs = false;
         //Sleep(150);
     }

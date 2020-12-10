@@ -45,7 +45,7 @@ PROCESS_INFORMATION createProcess(char * process_path) {
     ZeroMemory( &si, sizeof(si) );
     si.cb = sizeof(si);
     ZeroMemory( &pi, sizeof(pi) );
-    bool  ret = CreateProcess(process_path, NULL, NULL, NULL, false, 0, NULL, NULL, &si, &pi);
+    bool  ret = CreateProcess(NULL, process_path, NULL, NULL, false, 0, NULL, NULL, &si, &pi);
     if(!ret) {
         DWORD error = GetLastError();
         logs = fopen(LOGS_TXT, "a");
